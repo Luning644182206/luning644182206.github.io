@@ -11,7 +11,7 @@
 
     <title>
         
-        golang 安装 - 鲁宁的博客 | 程序员日记
+        鲁宁的博客 | 程序员日记
         
     </title>
 
@@ -65,7 +65,7 @@
                     <span>标签</span>
                 </a>
             </li>
-            <li >
+            <li  class=active >
                 <a href="/archive">
                     <i class="iconfont icon-guidang2"></i>
                     <span>存档</span>
@@ -87,10 +87,6 @@
             
         </ul>
     </div>
-    
-        <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MAC安装Go"><span class="toc-text">MAC安装Go</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-安装Homebrew"><span class="toc-text">1.安装Homebrew</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-安装Golang"><span class="toc-text">2.安装Golang</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-配置GOPATH"><span class="toc-text">3.配置GOPATH</span></a></li></ol></li></ol></li></ol>
-</div>
     
 </div>
 
@@ -118,50 +114,50 @@
         
 
 
-<div class="post-container">
-    <div class="post-title">
-        golang 安装
-    </div>
+<!-- 归档列表 -->
 
-    <div class="post-meta">
-        <span class="attr">发布于：<span>2017-08-30 14:51:52</span></span>
-        
-        <span class="attr">标签：/
-        
-        <a class="tag" href="/tags/#golang" title="golang">golang</a>
-        <span>/</span>
-        
-        <a class="tag" href="/tags/#mac" title="mac">mac</a>
-        <span>/</span>
-        
-        
-        </span>
-        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-    </div>
-    <div class="post-content ">
-        <h1 id="MAC安装Go"><a href="#MAC安装Go" class="headerlink" title="MAC安装Go"></a>MAC安装Go</h1><p>使用go之前的环境配置</p>
-<h3 id="1-安装Homebrew"><a href="#1-安装Homebrew" class="headerlink" title="1.安装Homebrew"></a>1.安装Homebrew</h3><p>请参照Homebrew官网安装: <a href="https://brew.sh/" target="_blank" rel="external">点击访问Homebrew主页</a></p>
-<h3 id="2-安装Golang"><a href="#2-安装Golang" class="headerlink" title="2.安装Golang"></a>2.安装Golang</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install go</div></pre></td></tr></table></figure>
-<h3 id="3-配置GOPATH"><a href="#3-配置GOPATH" class="headerlink" title="3.配置GOPATH"></a>3.配置GOPATH</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ go env</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">set</span> -gx GOPATH /usr/<span class="built_in">local</span>/Cellar/go/1.7.6</div></pre></td></tr></table></figure>
-<p>在bash中设置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ vim .bash_profile</div><div class="line"></div><div class="line">    <span class="built_in">export</span> GOPATH=/usr/<span class="built_in">local</span>/Cellar/go/1.7.6</div><div class="line">    <span class="built_in">export</span> GOBIN=<span class="variable">$GOPATH</span>/bin</div><div class="line">    <span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$GOBIN</span></div></pre></td></tr></table></figure>
-<p>使修改立刻生效:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">source</span> .bash_profile</div></pre></td></tr></table></figure>
-<p>参考链接: <a href="http://www.jianshu.com/p/358cbc939569" target="_blank" rel="external">http://www.jianshu.com/p/358cbc939569</a></p>
+<div class="archives-container">
 
+<div class="one-tag-list">
+                <span class="fa fa-calendar-times-o listing-seperator" id="2017">
+                    <span class="tag-text">2017</span>
+                </span>
+    <ul>
         
-        <br />
-        <div id="comment-container">
-        </div>
-        <div id="disqus_thread"></div>
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li >
+            <span>08-30</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2017/08/30/golang-安装/">
+                        <span>
+                            golang 安装
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li >
+            <span>07-23</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2017/07/23/hello-world/">
+                        <span>
+                            Hello World
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
 
-        <div id="lv-container">
-        </div>
+    </ul>
+</div>
 
-    </div>
 </div>
 
     </div>
@@ -232,31 +228,12 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = true
+    window.isPost = false
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-
-    <script>
-        /**
-         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-        */
-        if( '' || '')
-        var disqus_config = function () {
-            this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-
-        (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://airclouds-blog.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
 
 
 
