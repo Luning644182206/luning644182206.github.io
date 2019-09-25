@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="鲁宁的博客">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        [前端日记][基础日记] script 元素 - 鲁宁的博客 | 程序员日记
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> No cross， No crown </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>Ning Lu</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#script-标签属性："><span class="toc-text">script 标签属性：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#标签位置："><span class="toc-text">标签位置：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#延迟脚本："><span class="toc-text">延迟脚本：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#异步脚本："><span class="toc-text">异步脚本：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#外部文件引入的优势："><span class="toc-text">外部文件引入的优势：</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> No cross， No crown </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        [前端日记][基础日记] script 元素
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-09-25 22:25:29</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#前端日记" title="前端日记">前端日记</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#基础日记" title="基础日记">基础日记</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h1 id="script-标签属性："><a href="#script-标签属性：" class="headerlink" title="script 标签属性："></a>script 标签属性：</h1><ul>
+<li>async：可选。表示应该立即下载脚本，但不妨碍页面中的其他操作，比如下载其他资源或等待加载其他脚本。<font color="#FF0000"><strong>只对外部文件有效。</strong></font></li>
+<li>charset：可选。表示通过src属性指定的代码字符集。由于大多数浏览器会忽略它的值，因此这个属性很少有人用。</li>
+<li>defer：可选 。表示脚本可以延迟到文档完全被解析和显示之后再执行。<font color="#FF0000"><strong>只对外部脚本文件有效。</strong></font>IE7及更早版本对嵌入脚本也支持这个属性。</li>
+<li>src：可选。表示包含要执行代码的外部文件。</li>
+<li>type：可选。可以看成是language的替代属性（该属性已废弃）；表示编写代码使用脚本语言的内容类型（也成为MIME类型）。虽然text/javascript和text/ecmascript都已经不被推荐使用，但人们一直以来使用的都还是text/javascript。实际上，服务器在传送JavaScript文件时使用的MIME类型通常是application/x-javascript。但在type中 设置这个值可能导致脚本被忽略。另外，在非ie浏览器中还可以使用以下值：application/javascript和application/ecmascript。考虑到约定俗成和最大限度的浏览器兼容性，目前type属性的值依旧还是text/javascript。不过，这个属性值并不是必需的，如果没有指定这个属性，则默认值仍为text/javascript。</li>
+</ul>
+<p>带有src属性的&lt;script&gt;元素不应该在其&lt;script&gt;和&lt;/script&gt;标签之间再包含额外的JavaScript代码。如果包含了嵌入代码的代码，则只会下载并执行外部脚本文件，嵌入的代码会被忽略。</p>
+<p>通过&lt;script&gt;元素的src属性还可以包含来自外部域的JavaScript文件。这一点上，&lt;script&gt;和&lt;img&gt;元素非常相似，即它的src属性可以是指向当前HTML页面所在区域之外的某个域中的完整URL，例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"http://www.somwhere.com/javascript.js"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<font color="#FF0000"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;利用这一点就可以在必要时通过不同的域来提供JavaScript文件（利用这一点可以解决前端中的跨域问题）。无论如何包含代码，只要不存在defer和async属性，浏览器都会按照&lt;script&gt;元素所在页面中的先后顺序对它们依次解析。完成第一个&lt;script&gt;标签解析后，才会解析第二个，之后是第三个…</strong></font>
+
+<h1 id="标签位置："><a href="#标签位置：" class="headerlink" title="标签位置："></a>标签位置：</h1><p>传统方法是将所有的&lt;script&gt;标签全部放在&lt;head&gt;元素中，例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;title&gt;example html&lt;/title&gt;</div><div class="line">        &lt;script type="text/javascript" src="example1.js"&gt;&lt;/script&gt;</div><div class="line">        &lt;script type="text/javascript" src="example2.js"&gt;&lt;/script&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        &lt;!-- 内容 --&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>这样做法的目的就是把多有的外部文件包括css文件和JavaScript文件的引用都放在相同的地方。但是放在&lt;head&gt;文件中就意味着<font color="#FF0000"><strong>必须等到全部文件全部下载完成后才能呈现页面的内容。如果某个文件加载时间过程那么就会导致浏览器出现短暂白屏问题。因此，推荐把标签放置在&lt;body&gt;元素页面内容的后面，</strong></font>即：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;title&gt;example html&lt;/title&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        &lt;!-- 内容 --&gt;</div><div class="line">        &lt;script type="text/javascript" src="example1.js"&gt;&lt;/script&gt;</div><div class="line">        &lt;script type="text/javascript" src="example2.js"&gt;&lt;/script&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>这样解析包含JavaScript代码之前，页面内容将完全被呈现在浏览器中，而用户也会因为浏览器窗口显示空白页面的时间缩短而感受到页面加载速度变快了（简直是骗人！）。</p>
+<h1 id="延迟脚本："><a href="#延迟脚本：" class="headerlink" title="延迟脚本："></a>延迟脚本：</h1><p>HTML 4.01为&lt;script&gt;标签定义了defer属性。这个属性的用途是表明脚本在执行时不影响页面构造。也就是说脚本会被延迟到整个页面都解析完成后再运行，因此defer属性是告诉浏览器立即下载，但延迟执行。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;title&gt;example html&lt;/title&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        &lt;!-- 内容 --&gt;</div><div class="line">        &lt;script type="text/javascript" defer="defer" src="example1.js"&gt;&lt;/script&gt;</div><div class="line">        &lt;script type="text/javascript" defer="defer" src="example2.js"&gt;&lt;/script&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>上述程序中，脚本将延迟到浏览器遇到&lt;/html&gt;标签后再执行。<font color="#FF0000"><strong>HTML5规范要求脚本按照他们出现的先后顺序执行，因此第一个延迟脚本会先于第二个延迟脚本执行，而这两个脚本会先于DOMContentLoad事件执行。</strong></font>在现实当中，延迟脚本并不一定会按照顺序执行，也不一定会在DOMContentLoad事件出发前执行，因此最好只包含一个延迟脚本。因为defer属性只适用于外部脚本文件，因此支持HTML5的实现会忽略给嵌入脚本设置的defer属性。IE4~IE7还支持嵌入脚本的defer属性，但是IE8及之后版本则完全支持HTML5规定的行为。</p>
+<h1 id="异步脚本："><a href="#异步脚本：" class="headerlink" title="异步脚本："></a>异步脚本：</h1><p>HTML5为&lt;script&gt;元素定义了async属性。这个属性与defer属性类似，都用于改变处理脚本的行为。同样与defer类似，async只适用于外部脚本文件，并告诉浏览器立即下载文件。但是与defer不同的是，标记为async的脚本并不保证按照指定他们的先后顺序执行，例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;title&gt;example html&lt;/title&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        &lt;!-- 内容 --&gt;</div><div class="line">        &lt;script type="text/javascript" async src="example1.js"&gt;&lt;/script&gt;</div><div class="line">        &lt;script type="text/javascript" async src="example2.js"&gt;&lt;/script&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>上述代码中，第二个脚本文件可能会在第一个脚本文件之前执行。因此，确保两者互不依赖非常重要。异步脚本一定会在页面load事件前之心，但是可能会在DOMContentLoad事件触发之前或者之后执行。</p>
+<h1 id="外部文件引入的优势："><a href="#外部文件引入的优势：" class="headerlink" title="外部文件引入的优势："></a>外部文件引入的优势：</h1><p>可维护性：遍及不同HTML页面的JavaScript会造成维护问题。但是把所有的JavaScript文件都放在一个文件夹中，维护起来就轻松多了。</p>
+<p>可缓存：浏览器能够根据具体的设置缓存链接的所有外部JavaScript文件。也就是说，如果有两个页面都使用了同一个文件，那么这个文件只需要下载一次。因此，最终结果就是能够加快页面加载的速度。</p>
+<p>参考文献：JavaScript高级语言设计</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/1813522187">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/luning644182206">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://yzlab.net">DMS LAB</a></span>
+        <span>/</span>
+        
+        <span><a href="https://www.littlebig.com">Luning&#39;s Page</a></span>
+        <span>/</span>
+        
+        <span><a href="#">It helps SEO</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <!-- <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span> -->
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+        */
+        if( '' || '')
+        var disqus_config = function () {
+            this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://airclouds-blog.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+
+
+
+</html>
