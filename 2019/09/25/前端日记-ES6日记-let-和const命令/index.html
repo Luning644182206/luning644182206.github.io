@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="鲁宁的博客">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        [前端日记[ES6日记] let 和const命令 - 鲁宁的博客 | 程序员日记
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> No cross， No crown </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>Ning Lu</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#let命令"><span class="toc-text">let命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本用法"><span class="toc-text">基本用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#不存在变量提升"><span class="toc-text">不存在变量提升</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#暂时性死区"><span class="toc-text">暂时性死区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不允许出现重复声明"><span class="toc-text">不允许出现重复声明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#块级作用域"><span class="toc-text">块级作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ES6的块级作用域"><span class="toc-text">ES6的块级作用域</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#const命令"><span class="toc-text">const命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本用法-1"><span class="toc-text">基本用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#本质"><span class="toc-text">本质</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> No cross， No crown </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        [前端日记[ES6日记] let 和const命令
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-09-25 09:54:49</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#-前端日记 -ES6日记" title="-前端日记 -ES6日记">-前端日记 -ES6日记</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h1 id="let命令"><a href="#let命令" class="headerlink" title="let命令"></a>let命令</h1><h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><p>es6新增了let命令，用于变量声明。其用法类似于var。但是所声明的<strong>变量只在代码块中有效</strong>。举例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="keyword">let</span> a = <span class="number">10</span>;</div><div class="line">    <span class="keyword">var</span> b = <span class="number">20</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">//ReferenceError: a is not definde.</span></div><div class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 20</span></div></pre></td></tr></table></figure></p>
+<p><strong>补充例子</strong></p>
+<h3 id="不存在变量提升"><a href="#不存在变量提升" class="headerlink" title="不存在变量提升"></a>不存在变量提升</h3><p><strong>var会存在变量提升现象，变量可以在未声明之前使用，而let为了纠正这个问题，要求必须先声明再使用，在声明前使用会报错</strong>，举例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// var的情况</span></div><div class="line"><span class="built_in">console</span>.log(foo); <span class="comment">// 输出undefined</span></div><div class="line"><span class="keyword">var</span> foo = <span class="number">2</span>;</div><div class="line"></div><div class="line"><span class="comment">// let的情况</span></div><div class="line"><span class="built_in">console</span>.log(bar); <span class="comment">// 报错 ReferenceError</span></div><div class="line"><span class="keyword">let</span> bar = <span class="number">2</span>;</div></pre></td></tr></table></figure></p>
+<h3 id="暂时性死区"><a href="#暂时性死区" class="headerlink" title="暂时性死区"></a>暂时性死区</h3><p>只要在作用于内存在let命令，他的所有声明变量及时绑定在这个区域的，不再受外部影响，举例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> temp = <span class="number">123</span>;</div><div class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">    tmp = <span class="string">'abc'</span>; <span class="comment">// 报错 ReferenceError</span></div><div class="line">    <span class="keyword">let</span> tmp;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>报错原因是在区域内有let声明了变量，但是使用却在声明之前，因此赋值会报错。在这种情况下typeof也不是完全安全的操作，举例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typeof</span> tmp; <span class="comment">// 报错 ReferenceError</span></div><div class="line"><span class="keyword">let</span> tmp = <span class="number">123</span>;</div><div class="line"></div><div class="line"><span class="keyword">typeof</span> undefinedVar; <span class="comment">// undefined</span></div></pre></td></tr></table></figure></p>
+<p>对于一个没有声明的变量，typeof是不会报错的。<br>有些隐蔽死区，也是容易出错的地方，举例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">x = y, y = <span class="number">2</span></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> [x, y];</div><div class="line">&#125;</div><div class="line"></div><div class="line">bar(); <span class="comment">// 报错</span></div></pre></td></tr></table></figure></p>
+<p>函数报错原因在于x等于变量y，但是y在此时没有声明。如果更改一下位置即可，y在使用x的时候，x已经声明过了，不会报错同时<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">x = <span class="number">2</span>, y = x</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> [x, y];</div><div class="line">&#125;</div><div class="line"></div><div class="line">bar();</div></pre></td></tr></table></figure></p>
+<h3 id="不允许出现重复声明"><a href="#不允许出现重复声明" class="headerlink" title="不允许出现重复声明"></a>不允许出现重复声明</h3><p>let 不允许相同的变量在同一个作用域内重复说明，举例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 报错</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> a = <span class="number">10</span>;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">10</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 报错</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> a = <span class="number">10</span>;</div><div class="line">    <span class="keyword">let</span> a = <span class="number">10</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 报错</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">arg</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> arg = <span class="number">10</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 不报错</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">arg</span>) </span>&#123;</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">let</span> arg = <span class="number">10</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h2><p>块级作用域的出现主要解决两个问题，第一个是内层变量可能覆盖外层变量，第二个是，用来计数的循环变量泄露为全局变量。举例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 变量覆盖</span></div><div class="line"><span class="keyword">var</span> tmp = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(tmp);</div><div class="line">    <span class="keyword">if</span> (<span class="literal">false</span>) &#123;</div><div class="line">        <span class="keyword">var</span> tem = <span class="string">"hello"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">f(); <span class="comment">// undefined 原因在于 if内的var变量提升,覆盖了外边的tmp，所以打印为undefined</span></div><div class="line"></div><div class="line"><span class="comment">// 计数循环变量为全局变量</span></div><div class="line">s = <span class="string">"hello"</span>;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; s.length; i++) &#123;</div><div class="line">    <span class="built_in">console</span>.log(s[i]);</div><div class="line">&#125; </div><div class="line"><span class="built_in">console</span>.log(i); <span class="comment">// 5 循环结束后没有被销毁，泄露为全局变量</span></div></pre></td></tr></table></figure></p>
+<h3 id="ES6的块级作用域"><a href="#ES6的块级作用域" class="headerlink" title="ES6的块级作用域"></a>ES6的块级作用域</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> n = <span class="number">5</span>;</div><div class="line">    <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">        <span class="keyword">let</span> n = <span class="number">10</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">console</span>.log(n); <span class="comment">// 5</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>es6在块级作用域中，函数声明也会存在变量提升的处理，举例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 下面函数会报错 Uncaught TypeError: f is not a function</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;  </div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"I am outside!"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="literal">false</span>) &#123;</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">f</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">"I am inside!"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    f();</div><div class="line">&#125;)();</div><div class="line"></div><div class="line"><span class="comment">// 原因为</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;  </div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"I am outside!"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> <span class="function"><span class="keyword">function</span> <span class="title">f</span> = <span class="title">undefined</span>; // 函数声明提升</span></div><div class="line">    <span class="title">if</span> (<span class="params">false</span>) &#123;</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">f</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">"I am inside!"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    f(); <span class="comment">// Uncaught TypeError: f is not a function</span></div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
+<h1 id="const命令"><a href="#const命令" class="headerlink" title="const命令"></a>const命令</h1><h2 id="基本用法-1"><a href="#基本用法-1" class="headerlink" title="基本用法"></a>基本用法</h2><p>const声明一个只读常量，一旦声明不能改变。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> PI = <span class="number">3.14</span>;</div><div class="line">PI = <span class="number">3</span>; <span class="comment">// 报错</span></div></pre></td></tr></table></figure></p>
+<p>声明必须初始化，不然报错，举例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> PI; <span class="comment">// 报错</span></div></pre></td></tr></table></figure></p>
+<p>同样const在块级作用域有效，也不存在变量提升，同样不能重复定义，举例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 块级作用域有效</span></div><div class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">    <span class="keyword">const</span> PI = <span class="number">3.14</span>;</div><div class="line">&#125;</div><div class="line">PI <span class="comment">// 报错</span></div><div class="line"></div><div class="line"><span class="comment">// 不存在变量提升</span></div><div class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">    <span class="built_in">console</span>.log(PI); <span class="comment">// 报错，事前用没有声明</span></div><div class="line">    <span class="keyword">const</span> PI = <span class="number">3.14</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 不可重复定义</span></div><div class="line"><span class="keyword">var</span> massage = <span class="string">"hello"</span>;</div><div class="line"><span class="keyword">let</span> age = <span class="number">10</span>;</div><div class="line"><span class="comment">// 下面两句报错</span></div><div class="line"><span class="keyword">const</span> massage = <span class="string">"hello"</span>;</div><div class="line"><span class="keyword">const</span> age = <span class="number">10</span>;</div></pre></td></tr></table></figure></p>
+<h3 id="本质"><a href="#本质" class="headerlink" title="本质"></a>本质</h3><p><strong>const实际上保证的并不是变量的值不能改动，而是变量指向的那个内存地址不能改动，</strong> 对于简单的数据类型（如：数值、布尔、字符串）而言，变量指向的内存地址保存的只是一个指针，const能够保证这个指针是固定的，至于它指向的数据结构是不是可变的，这是完全不能控制的，因此，将一个对象声明为常量的时候要小心。举例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> foo = &#123;&#125;</div><div class="line"></div><div class="line"><span class="comment">// 为foo添加属性</span></div><div class="line">foo.prop = <span class="number">123</span>; <span class="comment">// 不报错</span></div><div class="line">foo.prop; <span class="comment">// 123</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> a = [];</div><div class="line">a.push(<span class="string">"hello"</span>); <span class="comment">// 可执行</span></div><div class="line">a.length; <span class="comment">// 可执行</span></div><div class="line">a = [<span class="string">'word'</span>]; <span class="comment">// 报错</span></div></pre></td></tr></table></figure></p>
+<p>如果想将对象冻结，应该使用Object.freeze方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> foo = <span class="built_in">Object</span>.freeze(&#123;&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 常规模式下，不起作用，严格模式下报错</span></div><div class="line">foo.prop = <span class="number">123</span>;</div></pre></td></tr></table></figure></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/1813522187">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/luning644182206">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://yzlab.net">DMS LAB</a></span>
+        <span>/</span>
+        
+        <span><a href="https://www.littlebig.com">Luning&#39;s Page</a></span>
+        <span>/</span>
+        
+        <span><a href="#">It helps SEO</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <!-- <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span> -->
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+        */
+        if( '' || '')
+        var disqus_config = function () {
+            this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://airclouds-blog.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+
+
+
+</html>
