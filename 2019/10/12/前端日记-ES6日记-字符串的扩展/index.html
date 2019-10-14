@@ -89,7 +89,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#字符串的Unicode表示法"><span class="toc-text">字符串的Unicode表示法</span></a></li></ol>
 </div>
     
 </div>
@@ -141,7 +141,9 @@
 </span>
     </div>
     <div class="post-content ">
-        
+        <p>ES6加强了对Unicode的支持，并扩展了字符串</p>
+<h1 id="字符串的Unicode表示法"><a href="#字符串的Unicode表示法" class="headerlink" title="字符串的Unicode表示法"></a>字符串的Unicode表示法</h1><p>JS里面是允许采用\uxxxx的方式表示字符的，字符的表示的区间为\u0000~\uFFFF之间的字符。超过这个范围的字符，必须使用双字节表达式，举例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="string">"\u0061"</span></div><div class="line"><span class="comment">// "a" </span></div><div class="line"></div><div class="line"><span class="string">"\uD842\uDFB7"</span></div><div class="line"><span class="comment">// "𠮷"</span></div><div class="line"></div><div class="line"><span class="comment">// ES6支持用&#123;&#125;解决双字节问题</span></div><div class="line"><span class="string">"\u&#123;20BB7&#125;"</span></div><div class="line"><span class="comment">// "𠮷"</span></div></pre></td></tr></table></figure></p>
+
         
         <br />
         <div id="comment-container">
