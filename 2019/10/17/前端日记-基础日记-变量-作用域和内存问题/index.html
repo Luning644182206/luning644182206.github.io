@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="鲁宁的博客">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        [前端日记][基础日记] 变量 作用域和内存问题 - 鲁宁的博客 | 程序员日记
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> No cross， No crown </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>Ning Lu</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基本类型和引用类型"><span class="toc-text">基本类型和引用类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#复制变量"><span class="toc-text">复制变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#传递参数"><span class="toc-text">传递参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#检测类型"><span class="toc-text">检测类型</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> No cross， No crown </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        [前端日记][基础日记] 变量 作用域和内存问题
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-10-17 15:52:21</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#前端日记" title="前端日记">前端日记</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#基础日记" title="基础日记">基础日记</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h1 id="基本类型和引用类型"><a href="#基本类型和引用类型" class="headerlink" title="基本类型和引用类型"></a>基本类型和引用类型</h1><pre><code>基本类型指的是简单的数据段，引用类型指的是那些可能由多个值构成的对象。Undefined、Null、Boolean、Number和String是按值访问的，因为可以直接操作保存在变量中的数值。
+引用类型的值是保存在内存中的对象，在操作对象时，实际上操作的是对象的引用而不是实际的对象。
+</code></pre><h2 id="复制变量"><a href="#复制变量" class="headerlink" title="复制变量"></a>复制变量</h2><pre><code>如果从一个变量向另一个变量复制基本类型的值，会在变量对象上创建新值，然后把该值复制到为新变量分配的位置上。举例：
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num1 = <span class="number">5</span>;</div><div class="line"><span class="keyword">var</span> num2 = num1;</div></pre></td></tr></table></figure>
+<pre><code>num1中保存的数值是5.当使用num1的数值来初始化num2时，num2中也保存了值5.但是num2中的5与num1中的5是完全独立的，该值只是num1中5的一个副本。两个变量可以参与任何操作而不会相互影响。
+引用类型的变量在赋值的时候，同样也会复制一份放到为新变量分配的空间中。但是，这个副本存储的是指针。两个副本访问的其实是同一个对象。举例：
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line"><span class="keyword">var</span> obj2 = obj1;</div><div class="line">obj1.name = <span class="string">"charles"</span>;</div><div class="line"><span class="built_in">console</span>.log(obj2.name); <span class="comment">// "charles"</span></div></pre></td></tr></table></figure>
+<h2 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h2><pre><code>基本类型的传递如同基本类型变量复制一样，而引用类型值的传递，则如同引用类型变量的复制一样。
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 基本类型数值传递</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addTen</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">    num += <span class="number">10</span>;</div><div class="line">    <span class="keyword">return</span> num;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> count = =<span class="number">20</span>;</div><div class="line"><span class="keyword">var</span> reuslt = addTen(count);</div><div class="line"><span class="built_in">console</span>.log(count); <span class="comment">// 20</span></div><div class="line"><span class="built_in">console</span>.log(reuslt); <span class="comment">// 30</span></div><div class="line"></div><div class="line"><span class="comment">// 引用类型数值传递</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setName</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">    obj.name = <span class="string">"charles"</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">setName(person);</div><div class="line"><span class="built_in">console</span>.log(person.name); <span class="comment">// person中的属性变量</span></div></pre></td></tr></table></figure>
+<h2 id="检测类型"><a href="#检测类型" class="headerlink" title="检测类型"></a>检测类型</h2><pre><code>typeof操作符可以确定一个变量是字符串、数值、布尔值还是undefined，如果对象是null，则会返回&quot;object&quot;。举例：
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s = <span class="string">"charles"</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="literal">true</span>;</div><div class="line"><span class="keyword">var</span> i = <span class="number">22</span>;</div><div class="line"><span class="keyword">var</span> u;</div><div class="line"><span class="keyword">var</span> n = <span class="literal">null</span>;</div><div class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> s); <span class="comment">// string</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> i); <span class="comment">// number</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> b); <span class="comment">// boolean</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> u); <span class="comment">// undefined</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> n); <span class="comment">// object</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> o); <span class="comment">// object</span></div></pre></td></tr></table></figure>
+<p>基本数据类型用typeof非常方便，<font color="#FF0000"><strong>但是在检测引用类型的时候，typeof作用不大。通常我们并不只是想知道某个是对象，而是想知道它什么类型的对象。因此可以使用instanceof操作符。返回布尔值</strong></font>，举例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(person <span class="keyword">instanceof</span> <span class="built_in">Object</span>);</div><div class="line"><span class="built_in">console</span>.log(colors <span class="keyword">instanceof</span> <span class="built_in">Array</span>);</div><div class="line"><span class="built_in">console</span>.log(pattern <span class="keyword">instanceof</span> <span class="built_in">RegExp</span>); <span class="comment">// 变量pattern是RegExp吗？</span></div></pre></td></tr></table></figure></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/1813522187">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/luning644182206">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://yzlab.net">DMS LAB</a></span>
+        <span>/</span>
+        
+        <span><a href="https://www.littlebig.com">Luning&#39;s Page</a></span>
+        <span>/</span>
+        
+        <span><a href="#">It helps SEO</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <!-- <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span> -->
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+        */
+        if( '' || '')
+        var disqus_config = function () {
+            this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://airclouds-blog.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+
+
+
+</html>
