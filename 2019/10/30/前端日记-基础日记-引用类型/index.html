@@ -21,7 +21,15 @@
     <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
     <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
     <!-- ga & ba script hoook -->
-    <script></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?1dfc92fbb711cf11c8438bf3e947c034";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 </head>
 
 <body>
@@ -149,7 +157,7 @@
 <p>利用length属性方便的在数组尾部添加元素，举例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 减少</span></div><div class="line"><span class="keyword">var</span> colors = [<span class="string">"red"</span>, <span class="string">"blue"</span>, <span class="string">"green"</span>];</div><div class="line">colors[colors.length] = <span class="string">"black"</span>; <span class="comment">// 在位置3添加颜色</span></div><div class="line">colors[colors.length] = <span class="string">"brown"</span>; <span class="comment">// 在位置4添加颜色</span></div></pre></td></tr></table></figure></p>
 <p>当把数组放在超出当前数组大小的位置时，数组会重新其长度值，即长度值等于它最后索引加1，举例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 减少</span></div><div class="line"><span class="keyword">var</span> colors = [<span class="string">"red"</span>, <span class="string">"blue"</span>, <span class="string">"green"</span>];</div><div class="line">colors[<span class="number">99</span>] = <span class="string">"black"</span>;</div><div class="line"><span class="built_in">console</span>.log(colors.length); <span class="comment">// 100</span></div></pre></td></tr></table></figure></p>
 <h2 id="检测数组"><a href="#检测数组" class="headerlink" title="检测数组"></a>检测数组</h2><p>对于一个网页或者一个全局作用域而言，使用instanceof操作符就能得到满意的结果，如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (value <span class="keyword">instanceof</span> <span class="built_in">Array</span>) &#123;</div><div class="line">    <span class="comment">// 对数组执行某些操作</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><font color="#FF0000"><strong>instanceof操作符的问题在于，它假定只有一个全局执行环境。如果网页中包含多个框架，那实际上就存在两个以上不同的环境，从而存在两个以上不同版本的Array构造函数。从不同框架相互传值，不同框架中存在不同的构造函数。</strong></font>为了解决这个问题，ECMAScript增加了Array.isArray()方法。这个方法的目的是最终确定某个值到底是不是数组，而不管它是在哪个全局环境中创建的。这个方法如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(value)) &#123;</div><div class="line">    <span class="comment">// 对数组执行某些操作</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><font color="#FF0000"><strong>instanceof操作符的问题在于，它假定只有一个全局执行环境。如果网页中包含多个框架，那实际上就存在两个以上不同的环境，从而存在两个以上不同版本的Array构造函数。从不同框架相互传值，不同框架中存在不同的构造函数。</strong></font>为了解决这个问题，ECMAScript5增加了Array.isArray()方法。这个方法的目的是最终确定某个值到底是不是数组，而不管它是在哪个全局环境中创建的。这个方法如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(value)) &#123;</div><div class="line">    <span class="comment">// 对数组执行某些操作</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
         
         <br />
